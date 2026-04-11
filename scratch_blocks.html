@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch 邏輯設計說明</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #4c97ff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #4c97ff;
+            border-bottom: 2px solid #4c97ff;
+            padding-bottom: 10px;
+        }
+        .logic-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #ff8c19;
+            border-left: 6px solid #ff8c19;
+            padding-left: 15px;
+        }
+        .block-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .block-item {
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+        }
+        .block-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        }
+        .explanation {
+            background: #fff9f2;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffe0b2;
+        }
+        .explanation h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #e67e22;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    	    <a href="index.html">Home</a>
+        <a href="javascript:history.back()">← Back</a>
+    
+    </nav>
+
+    <h1>Scratch 程式邏輯架構解析</h1>
+
+    <section class="logic-card">
+        <h2>1. 氣泡排序法 (Bubble Sort) 邏輯設計</h2>
+        <div class="block-grid">
+            <div class="block-item">
+                <img src="images/scratch_block_bubble.png" alt="Bubble Sort Blocks">
+            </div>
+        </div>
+        <div class="explanation">
+            <h3>演算法核心邏輯：</h3>
+            <ul>
+                <li><strong>雙重迴圈控制：</strong> 使用「重複直到 <code>sorted flag = 1</code>」作為外層，確保排序直到完全正確為止。</li>
+                <li><strong>相鄰比較與交換：</strong> 判斷第 <code>count</code> 項是否大於 <code>count + 1</code> 項。若成立，則透過第三個變數 <code>temp</code> 暫存進行內容互換。</li>
+                <li><strong>優化機制：</strong> 每次掃描開始前將 <code>swaps</code> 歸零，若一整輪掃描後 <code>swaps = 0</code>，代表排序已完成，自動設定旗標結束程式。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="logic-card">
+        <h2>2. 簡易電路入門邏輯設計</h2>
+        <div class="block-grid">
+            <div class="block-item">
+                <p><strong>[ 系統狀態偵測 ]</strong></p>
+                <img src="images/curcuit_1.png" alt="Circuit System Control">
+            </div>
+            <div class="block-item">
+                <p><strong>[ 開關切換邏輯 ]</strong></p>
+                <img src="images/circuit_2.png" alt="Switch Logic">
+            </div>
+            <div class="block-item">
+                <p><strong>[ 導線連接偵測 ]</strong></p>
+                <img src="images/circuit_3.png" alt="Connection Detection">
+            </div>
+        </div>
+        <div class="explanation">
+            <h3>電路模擬邏輯：</h3>
+            <ul>
+                <li><strong>連接點感應 (circuit_3.png)：</strong> 利用「碰到顏色」判斷導線是否接觸到正確的接點。當接觸時 <code>connections complete</code> 增加，斷開則減少。</li>
+                <li><strong>手動開關控制 (circuit_2.png)：</strong> 當點擊開關角色時，切換 <code>ON or OFF</code> 變數並改變造型，模擬真實開關的機械動作。</li>
+                <li><strong>安全防呆機制 (curcuit_1.png)：</strong> 在主迴圈中持續偵測，若 <code>connections complete < 3</code>（代表電路有斷點），則強迫系統狀態維持在 <code>OFF</code> 並切換為關閉造型。</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -79,30 +79,144 @@ footer{
 <section id="data_ref">
 <h2>參考筆記</h2>
 
-<ul>
-<li>程式筆記</li>
-<ul>
-        <li><a href="code_c.html">C 語言</a></li>
-        <li><a href="code_cplusplus.html">C++ 語言</a></li>
-        <li><a href="code_python.html">Python</a></li>
-      </ul>
-<li>數學筆記</li>
-<li>參考影片</li>
-</ul>
+<ul class="main-list">
+    <li>
+      <details open>
+  <summary style="padding: 4px 15px;"> <span class="icon">💻</span>
+    <span class="title">程式學習筆記</span>
+    <span class="arrow"></span>
+  </summary>
+  <ul class="sub-list" style="margin-top: 2px;"> <li style="margin: 2px 0;"><a href="code_c.html">C 語言基礎</a></li>
+    <li style="margin: 2px 0;"><a href="code_cplusplus.html">C++ 進階開發</a></li>
+    <li style="margin: 2px 0;"><a href="code_python.html">Python 數據分析</a></li>
+  </ul>
+</details>
 
+    </li>
+    
+    <li class="static-item">
+  <a href="math_problem.pdf" target="_blank" style="text-decoration: none; color: inherit; display: flex; width: 100%; align-items: center;">
+    <span class="icon">📐</span> 
+    <span class="title">數學筆記 (PDF)</span>
+  </a>
+<li class="static-item">
+  <span class="icon">🎬</span> 參考影片：
+  <a href="https://ocw.aca.ntu.edu.tw/courses/111S107" target="_blank">程式設計 Programming Design</a> 　　 |　　
+  <a href="https://ocw.aca.ntu.edu.tw/courses/111S106" target="_blank">Python Programming Foundation
+Python 程式設計基礎課程</a>
+</li>
+  </ul>
 </section>
 
+<style>
+  /* 基礎容器設定 */
+  .main-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* 隱藏預設的小三角形 */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+
+  summary:hover {
+    background: #dfe6f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  /* 靜態項目（非收合）的樣式維持一致 */
+  .static-item {
+    padding: 10px 15px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 圖示與標題間距 */
+  .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  .title {
+    flex-grow: 1;
+    font-weight: bold;
+    color: #34495e;
+  }
+
+  /* 自定義箭頭符號與動畫 */
+  .arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #95a5a6;
+    transition: transform 0.3s;
+  }
+
+  /* 當展開 (details open) 時，箭頭旋轉 180 度 */
+  details[open] .arrow {
+    transform: rotate(180deg);
+  }
+
+  /* 當展開時，summary 的背景變色 */
+  details[open] summary {
+    background: #3498db;
+    border-color: #2980b9;
+  }
+  details[open] .title, details[open] .arrow {
+    color: white;
+    border-top-color: white; /* 讓箭頭變白 */
+  }
+
+ /* 修改 summary 的上下 padding，從 10px 縮減為 5px */
+summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px; /* 第一個數值代表上下，第二個代表左右 */
+  background: #eef2f7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #d1d9e6;
+}
+
+/* 修改靜態項目的上下 padding */
+.static-item {
+  padding: 5px 15px; /* 同樣從 10px 縮減為 5px */
+  margin-top: 5px;   /* 調整與上一個項目的間距 */
+  display: flex;
+  align-items: center;
+}
+
+/* 修改次選單（子項目）的間距 */
+.sub-list li {
+  margin: 4px 0; /* 從 8px 縮減為 4px */
+}
+
+.sub-list {
+  list-style: none;
+  padding-left: 40px;
+  margin-top: 2px; /* 縮小與標題的間距 */
+  border-left: 2px solid #3498db;
+  margin-left: 25px;
+}
+</style>
 <section id="learning">
 <h2>學習歷程</h2>
 
 <ul>
 <li>自學微積分（觀看線上課程）</li>
-<li>Scratch程式設計小遊戲</li>
+<a href="https://old.changhsumath.com/courses/365/" target="_blank">舊站</a>
+<a target="_blank" href="https://www.udemy.com/course/changhsumath_calculus1st/?srsltid=AfmBOoo2tyezM5QKTFYTuZVnAedh_RsL5VXV0o1HUAFx_y-GolQUUbr0">微積分</a>
+<li>Scratch程式設計</li><a href="scratch_blocks.html">邏輯 blocks</a>
 <li>GeoGebra 幾何軟體</li>
 <ul>
 	<li><a href="geogebra_mp4.html">GeoGebra 執行影片</a></li>
       </ul>
-<li>閱讀電動車相關書籍</li>
+<li><a href="reading.html">閱讀電動車相關書籍</a></li>
 
 </ul>
 
@@ -110,15 +224,18 @@ footer{
 
 
 <section id="projects">
-
-<h2>專案作品</h2>
-
-<h3>Scratch 小遊戲</h3>
-<p>設計一個簡單的反應力遊戲。</p>
-
-<h3>多選題策略分析</h3>
-<p>研究多選題的最佳作答策略並整理成報告。</p>
-
+  <h2>專案作品</h2>
+  <ul>
+    <li>
+      <a href="scratch_content.html">Scratch 作業</a>
+    </li>
+    <li>
+  <a href="簡報_多選題必勝策略解析.pdf" target="_blank" style="text-decoration: none; color: inherit;">
+    多選題策略分析：(開啟 pdf)</a>
+    <p style="margin-top: 0px;">　研究多選題的最佳作答策略並整理成報告。</p>
+  
+</li>
+  </ul>
 </section>
 
 

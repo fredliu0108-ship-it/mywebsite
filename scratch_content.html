@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch 程式作品集</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fcfcfc;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 導覽列 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #4c97ff; /* Scratch 經典藍 */
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #3373cc;
+            border-radius: 4px;
+        }
+        h1 {
+            text-align: center;
+            color: #4c97ff;
+            margin-bottom: 30px;
+        }
+        .scratch-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            transition: transform 0.2s;
+        }
+        .scratch-card:hover {
+            border-color: #4c97ff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #ff8c19; /* Scratch 經典橘 */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+        .media-container {
+            text-align: center;
+            margin: 20px 0;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        video {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .tech-info {
+            background: #fff9f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+        .tech-info strong {
+            color: #cf6300;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        
+        <a href="index.html">Home</a>
+        <a href="javascript:history.back()">← Back</a>
+    </nav>
+
+    <h1>Scratch 創意編程筆記</h1>
+
+    <section class="scratch-card">
+        <h2>1. 氣泡排序法 (Bubble Sort) 視覺化</h2>
+        <p>透過 Scratch 呈現氣泡排序的邏輯，觀察陣列中數字如何透過兩兩交換，最終由小排到大。</p>
+        
+        <div class="media-container">
+            <img src="images/scratch_bubble.png" alt="氣泡排序實作截圖">
+        </div>
+
+        <div class="tech-info">
+            <strong>實作關鍵：</strong>
+            <ul>
+                <li><strong>清單 (List)：</strong> 使用變數清單儲存 10 個隨機數字。</li>
+                <li><strong>雙重迴圈：</strong> 外層控制掃描次數，內層進行相鄰元素比較。</li>
+                <li><strong>變數標記：</strong> 圖片顯示了 <code>swaps</code>（交換次數）與 <code>sorted flag</code>（排序完成標記）。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="scratch-card">
+        <h2>2. 簡易電路入門教學</h2>
+        <p>這是一個互動式模擬實驗，教導使用者如何連接電池、燈泡與開關，組成一個完整的封閉迴路。</p>
+        
+        <div class="media-container">
+            <video controls>
+                <source src="scratch_circut.mp4" type="video/mp4">
+                您的瀏覽器不支援影片播放。
+            </video>
+        </div>
+
+        <div class="tech-info">
+            <strong>實作關鍵：</strong>
+            <ul>
+                <li><strong>角色互動：</strong> 拖動導線連接節點，當 <code>connections complete</code> 滿足時觸發導通。</li>
+                <li><strong>狀態判斷：</strong> 結合「開關角色」的造型切換與「燈泡角色」的亮度特效。</li>
+                <li><strong>跨領域學習：</strong> 將物理電路知識與程式布林邏輯（AND/OR）結合。</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>

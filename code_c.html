@@ -3,49 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C 語言程式學習筆記</title>
+    <title>C 語言程式設計學習筆記</title>
     <style>
         body {
             font-family: "Microsoft JhengHei", Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             background-color: #f4f4f9;
             color: #333;
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
+
+        
+        /* 導覽列：設定為兩端對齊 */
+.navbar {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between; /* 關鍵：讓 Home 在左，Back 在右 */
+    align-items: center;
+}
+
+/* 確保按鈕本身沒有多餘的邊距影響對齊 */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 15px;
+    background-color: #34495e;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+        .navbar a:hover {
+            background-color: #3498db;
+        }
+
         h1 {
             color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
             text-align: center;
+            margin: 10px 0;
+            font-size: 1.8em;
         }
+
         .note-section {
             background: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         h2 {
             color: #e67e22;
             border-left: 5px solid #e67e22;
             padding-left: 10px;
+            margin: 5px 0 10px 0;
+            font-size: 1.4em;
         }
+
+        .desc {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            color: #666;
+        }
+
         pre {
             background-color: #282c34;
             color: #abb2bf;
-            padding: 15px;
+            padding: 12px;
             border-radius: 5px;
-            overflow-x: auto; /* 程式碼過長時顯示捲軸 */
+            overflow-x: auto;
             font-family: "Consolas", "Monaco", monospace;
-            font-size: 14px;
+            font-size: 13px;
+            margin: 0;
         }
-        .desc {
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: #555;
-        }
+
         code {
             font-family: inherit;
         }
@@ -53,75 +91,47 @@
 </head>
 <body>
 
-    <h1>C語言程式設計學習筆記</h1>
+    <nav class="navbar">
+        <a href="index.html">🏠 Home</a>
+        <a href="javascript:history.back()">⬅ Back</a>
+    </nav>
+
+    <h1>C 語言程式設計學習筆記</h1>
 
     <section class="note-section">
         <h2>1. 進階溫度監測系統 (temp_sampler.c)</h2>
-        <div class="desc">功能說明：模擬 10 次溫度採樣，判斷過熱或過低狀態，並將數據與統計摘要存入文本檔案。</div>
+        <div class="desc">功能：模擬溫度採樣、判斷狀態並將統計數據輸出至檔案。</div>
         <pre><code>
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;time.h&gt;
 
 int main() {
-    int n = 10;                // 採樣次數
-    float temps[10];           // 儲存溫度的陣列
-    float sum = 0, avg;
-    float max_t, min_t;
+    int n = 10;
+    float temps[10], sum = 0, avg, max_t, min_t;
     int i;
 
-    // 初始化隨機數與檔案指標
     srand(time(NULL));
-    FILE *fptr;
-    fptr = fopen("temp_log.txt", "w"); // 以寫入模式開啟檔案
+    FILE *fptr = fopen("temp_log.txt", "w");
+    if (fptr == NULL) return 1;
 
-    if (fptr == NULL) {
-        printf("錯誤：無法建立紀錄檔！\n");
-        return 1;
-    }
-
-    printf("=== 進階監測系統：開始 10 次數據採樣 ===\n\n");
-    fprintf(fptr, "時間點,溫度(C),狀態\n"); // 寫入檔案標題
-
+    fprintf(fptr, "時間點,溫度(C),狀態\n");
     for (i = 0; i < n; i++) {
-        // 模擬溫度 15.0 ~ 45.0
         temps[i] = (rand() % 301 / 10.0) + 15.0;
-        
-        // 初始極值
-        if (i == 0) {
-            max_t = temps[i];
-            min_t = temps[i];
-        } else {
+        if (i == 0) { max_t = min_t = temps[i]; }
+        else {
             if (temps[i] > max_t) max_t = temps[i];
             if (temps[i] < min_t) min_t = temps[i];
         }
-
         sum += temps[i];
 
-        // 判斷狀態並顯示於螢幕與寫入檔案
-        const char *status;
-        if (temps[i] >= 35.0) status = "過熱";
-        else if (temps[i] <= 20.0) status = "過低";
-        else status = "正常";
-
+        const char *status = (temps[i] >= 35.0) ? "過熱" : (temps[i] <= 20.0 ? "過低" : "正常");
         printf("採樣 [%d]: %.1f °C (%s)\n", i + 1, temps[i], status);
         fprintf(fptr, "%d,%.1f,%s\n", i + 1, temps[i], status);
     }
-
     avg = sum / n;
-
-    // 輸出統計結果
-    printf("\n--- 統計報告 ---\n");
-    printf("平均溫度: %.2f °C\n", avg);
-    printf("最高溫度: %.1f °C\n", max_t);
-    printf("最低溫度: %.1f °C\n", min_t);
-    printf("----------------\n");
-    printf("所有數據已儲存 至 temp_log.txt\n");
-
-    // 將統計摘要也存入檔案
-    fprintf(fptr, "\n[統計摘要]\n平均:%.2f\n最大:%.1f\n最小:%.1f\n", avg, max_t, min_t);
-
-    fclose(fptr); // 關閉檔案
+    printf("\n平均: %.2f | 最高: %.1f | 最低: %.1f\n", avg, max_t, min_t);
+    fclose(fptr);
     return 0;
 }
         </code></pre>
@@ -129,7 +139,7 @@ int main() {
 
     <section class="note-section">
         <h2>2. 歐姆定律與電阻計算機 (resistor_calc.c)</h2>
-        <div class="desc">功能說明：計算兩個電阻的串聯或並聯總阻值，並結合歐姆定律計算總電流。</div>
+        <div class="desc">功能：支援串聯與並聯總電阻計算，並整合歐姆定律推算電流。</div>
         <pre><code>
 #include &lt;stdio.h&gt;
 
@@ -137,48 +147,25 @@ int main() {
     int choice;
     float r1, r2, total_r, voltage, current;
 
-    printf("=== 歐姆定律與電阻計算 ===\n");
-    printf("1. 計算串聯總電阻 (Series)\n");
-    printf("2. 計算並聯總電阻 (Parallel)\n");
-    printf("請選擇計算模式 (1 或 2): ");
+    printf("1. 串聯 (Series) | 2. 並聯 (Parallel): ");
     if (scanf("%d", &choice) != 1) return 1;
 
-    printf("請輸入第一個電阻值 (R1, 歐姆): ");
-    scanf("%f", &r1);
-    printf("請輸入第二個電阻值 (R2, 歐姆): ");
-    scanf("%f", &r2);
+    printf("輸入 R1, R2: ");
+    scanf("%f %f", &r1, &r2);
 
-    // 邏輯判斷與計算
     if (choice == 1) {
         total_r = r1 + r2;
-        printf("\n[計算結果] 串聯總電阻為: %.2f Ohm\n", total_r);
-    } 
-    else if (choice == 2) {
-        if (r1 + r2 == 0) {
-            printf("\n錯誤：電阻值不能同時為 0！\n");
-            return 1; 
-        }
-        total_r = (r1 * r2) / (r1 + r2);
-        printf("\n[計算結果] 並聯總電阻為: %.2f Ohm\n", total_r);
-    } 
-    else {
-        printf("\n選項無效，請重新執行程式。\n");
-        return 1;
-    }
-
-    // 進階功能：結合歐姆定律計算電流
-    printf("\n--- 進階電流計算 --- \n");
-    printf("請輸入供應電壓 (V, 伏特): ");
-    scanf("%f", &voltage);
-
-    if (total_r > 0) {
-        current = voltage / total_r;
-        printf("在 %.2fV 下，總電流為: %.4f A (安培)\n", voltage, current);
     } else {
-        printf("總電阻為 0，無法計算電流。\n");
+        if (r1 + r2 == 0) return 1;
+        total_r = (r1 * r2) / (r1 + r2);
     }
+    printf("總電阻: %.2f Ohm\n", total_r);
 
-    printf("========================================\n");
+    printf("輸入電壓 (V): ");
+    scanf("%f", &voltage);
+    if (total_r > 0) {
+        printf("總電流: %.4f A\n", voltage / total_r);
+    }
     return 0;
 }
         </code></pre>
