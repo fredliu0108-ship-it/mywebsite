@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物理學習筆記 - 熱學與流體</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fdfdfd;
+            color: #2c3e50;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #c0392b; /* 物理筆記採用熱情的紅色系 */
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #c0392b;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        .topic-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        h2 {
+            color: #d35400;
+            border-left: 6px solid #d35400;
+            padding-left: 15px;
+            margin-top: 0;
+        }
+        .formula-box {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #feb2b2;
+            margin: 15px 0;
+            font-family: "Cambria Math", serif;
+        }
+        .key-point {
+            background-color: #fff9db;
+            padding: 2px 5px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+        <a href="index.html">Home</a>
+    </nav>
+ <a href="./pdf/物理20250131_note.pdf" target="_blank" style="text-decoration: none; color: inherit;"> 
+    
+    物理筆記(開啟 pdf)
+  </a>
+    <h1>⚛️ 物理專題：熱學與流體力學</h1>
+
+    <section class="topic-card">
+        <h2>一、溫度與熱量 (Thermal Physics)</h2>
+        <p>溫度是描述物體冷熱程度的物理量，而熱量則是能量轉移的過程。</p>
+        
+        <div class="formula-box">
+            <strong>1. 溫標換算：</strong><br>
+            攝氏溫度 ($^\circ$C) 與華氏溫度 ($^\circ$F) 的關係式：<br>
+            $$F = \frac{9}{5}C + 32$$
+        </div>
+
+        <div class="formula-box">
+            <strong>2. 熱量與比熱公式：</strong><br>
+            $$H = m \cdot s \cdot \Delta T$$<br>
+            其中 $H$ 為吸收或放出的熱量，$m$ 為質量，$s$ 為比熱，$\Delta T$ 為溫度變化。
+        </div>
+
+        <ul>
+            <li><span class="key-point">比熱 ($s$)：</span> 使 1 公克的物質上升 1$^\circ$C 所需的熱量。水之比熱定為 1 cal/g$\cdot^\circ$C。</li>
+            <li><span class="key-point">熱平衡：</span> 當高溫物體與低溫物體接觸，熱量由高溫傳向低溫，直到溫度相等為止。此過程符合 <span class="highlight">能量守恆</span>：高溫物體放熱 = 低溫物體吸熱。</li>
+        </ul>
+        
+    </section>
+
+    <section class="topic-card">
+        <h2>二、流體力學：浮力 (Buoyancy)</h2>
+        <p>阿基米德原理是理解浮力的核心觀念。</p>
+
+        <div class="formula-box">
+            <strong>阿基米德原理 (Archimedes' Principle)：</strong><br>
+            $$B = V_{in} \cdot D_{fluid}$$<br>
+            浮力 ($B$) = 物體在液面下的體積 ($V_{in}$) $\times$ 液體密度 ($D_{fluid}$)。
+        </div>
+
+        <h3>常見題型邏輯解析：</h3>
+        <ul>
+            <li><strong>浮體：</strong> 當物體浮在液面上時，其 <span class="key-point">浮力 = 物體自重 ($W$)</span>。此時物體密度 < 液體密度。</li>
+            <li><strong>沉體：</strong> 當物體完全沉入液體時，其 <span class="key-point">浮力 < 物體自重</span>。此時物體密度 > 液體密度。</li>
+            <li><strong>排水體積：</strong> 物體在液面下的體積即為其排開液體的體積。</li>
+        </ul>
+        
+    </section>
+
+    <section class="topic-card">
+        <h2>三、液體壓力與帕斯卡原理</h2>
+        <div class="formula-box">
+            <strong>1. 液體壓力公式：</strong><br>
+            $$P = h \cdot D$$<br>
+            壓力 ($P$) = 深度 ($h$) $\times$ 液體密度 ($D$)。
+        </div>
+        <ul>
+            <li><span class="key-point">連通管原理：</span> 靜止液體中，同一水平高度的壓力必相等。</li>
+            <li><span class="key-point">帕斯卡原理：</span> 對密閉液體施加壓力，此壓力會大小不變地傳遞到液體的各個部分。</li>
+        </ul>
+    </section>
+
+    <div style="text-align: center; color: #7f8c8d; font-size: 0.9em; margin-top: 30px;">
+        整理日期：2025-01-31 | 物理核心觀念：熱能與流體靜力學
+    </div>
+
+</body>
+</html>

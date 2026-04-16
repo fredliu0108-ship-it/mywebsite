@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數學學習筆記 2025-04-19</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f7;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #34495e;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .navbar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            color: #2980b9;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .section-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #e67e22;
+            border-left: 6px solid #e67e22;
+            padding-left: 15px;
+            margin-top: 0;
+        }
+        .math-concept {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeeba;
+            margin: 15px 0;
+        }
+        .step-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .step-list li::before {
+            content: "? ";
+            color: #3498db;
+        }
+        .important-note {
+            color: #c0392b;
+            font-weight: bold;
+            background: #fdf2f2;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .formula {
+            font-family: "Cambria Math", serif;
+            font-style: italic;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+        <a href="index.html">Home</a>
+    </nav>
+ <a href="./pdf/math_note_複數與複數平面.pdf" target="_blank" style="text-decoration: none; color: inherit;"> 
+    
+    數學筆記(開啟 pdf)
+  </a>
+    <h1>數學：複數平面與空間幾何 (2025-04-19)</h1>
+
+    <section class="section-card">
+        <h2>一、複數與複數平面：$\omega$ 的性質</h2>
+        
+        <div class="math-concept">
+            <strong>核心觀念：單位根的乘積項分析</strong>
+            <p>考慮 $z^n - 1 = 0$ 的根為 $1, \omega, \omega^2, \dots, \omega^{n-1}$ [cite: 127]。</p>
+            <ul>
+                <li><strong>求值技巧：</strong> 將多項式看作 $(z-\omega)(z-\omega^2)\dots(z-\omega^{n-1})$，透過代入特定的 $z$ 值求解 。</li>
+                <li><strong>型式 $(1+\omega)(1+\omega^2)\dots$：</strong> 可看作將 $z$ 以 $-1$ 代入後提取負號分析 [cite: 120, 124]。
+                    <ul>
+                        <li>若 $n$ 為偶數：答案為 <span class="highlight">0</span> [cite: 121]。</li>
+                        <li>若 $n$ 為奇數：答案為 <span class="highlight">1</span> [cite: 122]。</li>
+                    </ul>
+                </li>
+                <li><strong>等比級數：</strong> 計算 $\omega^5 + \omega^6 + \dots + \omega^{20}$ 時，使用等比級數公式較不易算錯 [cite: 126]。</li>
+            </ul>
+        </div>
+            </section>
+
+    <section class="section-card">
+        <h2>二、空間中的平面與直線：外心與夾角</h2>
+
+        <div class="math-concept">
+            <strong>1. 空間中三角形外心求法</strong> 
+            <p>設三角形三頂點為 $A, B, C$，求外心 $O$ 需聯立三個平面方程式：</p>
+            <ul class="step-list">
+                <li><strong>平面 E：</strong> 通過 $A, B, C$ 三點的平面。先以外積 $\vec{AB} \times \vec{AC}$ 求用法向量 $\vec{N}$ 。</li>
+                <li><strong>平面 F：</strong> $\overline{AB}$ 的中垂面。</li>
+                <li><strong>平面 G：</strong> $\overline{AC}$ 的中垂面。</li>
+                <li>聯立後解得之 $(x, y, z)$ 即為外心座標 。</li>
+            </ul>
+        </div>
+
+        <div class="math-concept">
+            <strong>2. 平面夾角與平分面判別</strong>
+            <ul>
+                <li><strong>兩平面夾角：</strong> 利用法向量內積 $\cos\theta = \pm \frac{\vec{n_1} \cdot \vec{n_2}}{|\vec{n_1}||\vec{n_2}|}$ 求解。注意平面夾角需加正負號，直線夾角則不用 。</li>
+                <li><strong>鈍角與銳角平分面：</strong> 
+                    <p>取平面 $E_1$ 上一點 $Q$ 到兩個平分面的距離 $d(Q, M)$ 與 $d(Q, N)$。距離大者對應鈍角平分面，小者對應銳角平分面。</p>
+                </li>
+            </ul>
+        </div>
+            </section>
+
+    <section class="section-card">
+        <h2>三、幾何變換與極限應用</h2>
+        <div class="math-concept">
+            <strong>梯形中的相似三角形與長度計算</strong>
+            <p>在梯形 $ABCD$ 中，利用相似三角形比例關係（如 $\Delta APD \sim \Delta BCP$）求邊長 [cite: 128]。</p>
+            <ul>
+                <li><strong>分點公式：</strong> 處理點分段比例問題（如 $7:4n$） [cite: 128]。</li>
+                <li><strong>極限運算：</strong> 當 $n \to \infty$ 時，計算線段 $PQ$ 的極限值 [cite: 128]。</li>
+            </ul>
+        </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <span class="important-note">※ 筆記重點：法向量外積是解決空間平面問題的核心工具。</span>
+    </div>
+
+</body>
+</html>

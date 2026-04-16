@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數學學習筆記 2025-03-02</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f9;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .topic-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 10px;
+            margin-top: 0;
+        }
+        .math-box {
+            background: #eef7ff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #d1e9ff;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #e67e22;
+            font-weight: bold;
+        }
+        .image-placeholder {
+            background: #eee;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px dashed #ccc;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+        <a href="index.html">Home</a>
+    </nav>
+
+  <a href="./pdf/數學20250302_note.pdf" target="_blank" style="text-decoration: none; color: inherit;"> 
+    
+    數學筆記(開啟 pdf)
+  </a>
+    <h1>二次曲線：拋物線與橢圓專題 (2025-03-02)</h1>
+
+    <section class="topic-card">
+        <h2>一、拋物線的性質與應用</h2>
+        
+        <div class="math-box">
+            <strong>核心練習：</strong>
+            <ul>
+                <li>在拋物線 $y^2 = 20x$ 上求一點 P，使其與焦點距離為 15。 </li>
+                <li>已知頂點 (1,2)，對稱軸平行 x 軸且通過 (4,8)，求方程式。 [cite: 6]</li>
+                <li>求點 A(3,0) 到拋物線 $y^2 = 4x$ 的最短距離。 [cite: 9, 10]</li>
+            </ul>
+        </div>
+
+        <h3>生活應用題：吊橋與水柱</h3>
+        <p>利用拋物線模擬建築結構與運動軌跡：</p>
+        <ul>
+            <li><strong>吊橋鋼纜：</strong> 長 100 公尺，最低處 $CP=7$ 公尺，最高處 $AH=27$ 公尺，計算特定鉛直鋼條長度。 [cite: 13, 14, 15]</li>
+            <li><strong>水柱噴射：</strong> 雲梯車高度 14 公尺，最高點水平距離 3 公尺，落地距離 7 公尺，求最大高度。 </li>
+        </ul>
+            </section>
+
+    <section class="topic-card">
+        <h2>二、橢圓的幾何特性</h2>
+
+        <div class="math-box">
+            <strong>基本參數分析 ($16x^2 + 9y^2 = 144$)：</strong> 
+            <ul>
+                <li>中心、長軸長、短軸長及頂點坐標。 [cite: 44, 45, 46, 47]</li>
+                <li>焦點坐標與對稱軸方程式。 [cite: 48, 49]</li>
+            </ul>
+        </div>
+
+        <h3>極值與變換問題</h3>
+        <ul>
+            <li><strong>平移與伸縮：</strong> 將橢圓平移 $(h, k)$ 或以原點為中心伸縮 $k$ 倍後的新方程式。 [cite: 52, 82, 96]</li>
+            <li><strong>距離極值：</strong> 點 P 在橢圓上移動，求到特定直線（如 $x+3y=28$）的最短與最長距離。 [cite: 65, 66, 67]</li>
+            <li><strong>幾何判斷：</strong> 判斷焦點位置（透過長軸與短軸上的點關係）。 [cite: 40]</li>
+        </ul>
+            </section>
+
+    <section class="topic-card">
+        <h2>三、進階挑戰與多選題邏輯</h2>
+        <ul>
+            <li><strong>拋物線與橢圓重疊：</strong> 拋物線 $y^2 = 4x$ 的頂點與焦點恰為另一橢圓的頂點與焦點。 [cite: 78]</li>
+            <li><strong>線性變換：</strong> 橢圓 $\Gamma$ 經旋轉 $\theta$ 角後的新橢圓 $\Gamma'$ 方程式分析。 [cite: 116]</li>
+            <li><strong>正多邊形交點：</strong> 邊長為 3 的正六邊形與橢圓 $\frac{x^2}{16} + \frac{y^2}{7} = 1$ 的交點個數判斷。 [cite: 112, 113]</li>
+            <li><strong>內積最小值：</strong> 點 C 在二次函數 $y = \frac{1}{2}x^2$ 上變動，求向量內積 $\vec{AB} \cdot \vec{AC}$ 的最小值。 [cite: 33, 34]</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        <p>整理日期：2025-03-02 | 參考資料來源：數學練習卷 P8-P47</p>
+    </div>
+
+</body>
+</html>

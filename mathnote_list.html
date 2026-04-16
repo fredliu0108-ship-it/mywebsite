@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數學學習筆記清單</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #fcfdfd;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 導覽列 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #546e7a; /* 穩重的灰藍色 */
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #455a64;
+            border-radius: 4px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        /* 筆記列表樣式 */
+        .note-list {
+            list-style: none;
+            padding: 0;
+        }
+        .note-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e6ed;
+            transition: all 0.3s ease;
+        }
+        .note-item:hover {
+            transform: translateX(10px);
+            border-color: #3498db;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .note-item a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 1.15em;
+            font-weight: 500;
+        }
+        /* 日期裝飾 */
+        .date-prefix {
+            color: #3498db;
+            font-family: Consolas, monospace;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        /* 側邊裝飾條 */
+        .note-item {
+            border-left: 5px solid #bdc3c7;
+        }
+        .note-item:nth-child(1) { border-left-color: #3498db; }
+        .note-item:nth-child(2) { border-left-color: #2ecc71; }
+        .note-item:nth-child(3) { border-left-color: #e67e22; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <h1>數學學習筆記</h1>
+
+    <ul class="note-list">
+        <li class="note-item">
+            <a href="mathnote_20250302.html">
+                <span class="date-prefix">2025/03/02</span> 數學筆記(拋物線與橢圓)
+            </a>
+        </li>
+
+        <li class="note-item">
+            <a href="mathnote_20250419.html">
+                <span class="date-prefix">2025/04/19</span> 數學筆記(空間、幾何)
+            </a>
+        </li>
+
+        <li class="note-item">
+        	<a href="./pdf/math_note_極限.pdf" target="_blank" style="text-decoration: none; color: inherit;"> 
+            <!--a href="mathnote_20250301.html"-->
+                <span class="date-prefix">2025/05/01</span> 數學筆記(open pdf)
+            </a>
+        </li>
+    </ul>
+
+</body>
+</html>
